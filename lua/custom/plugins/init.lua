@@ -18,4 +18,5 @@ return {
       vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
     end,
   },
+  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
 }
