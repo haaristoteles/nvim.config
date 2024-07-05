@@ -19,4 +19,10 @@ return {
     end,
   },
   { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+  {
+    'FabijanZulj/blame.nvim',
+    config = function()
+      require('blame').setup()
+    end,
+  },
 }
