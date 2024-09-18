@@ -4,9 +4,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.keymap.set({ 'n', 'v' }, ';', ',', { remap = false })
-vim.keymap.set({ 'n', 'v' }, ',', ';', { remap = false })
-
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
@@ -74,6 +71,13 @@ vim.opt.scrolloff = 20
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- convenience remappings
+vim.keymap.set({ 'n', 'v' }, ';', ',', { remap = false })
+vim.keymap.set({ 'n', 'v' }, ',', ';', { remap = false })
+vim.keymap.set({ 'n', 'v' }, 'ü', '<C-w>', { remap = true })
+vim.keymap.set({ 'n', 'v' }, 'Ö', '<C-o>', { remap = false })
+vim.keymap.set({ 'n', 'v' }, 'Ä', '<C-i>', { remap = false })
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -81,6 +85,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', 'öd', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', 'äd', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', 'öö', '<cmd>cp<CR>', { desc = 'Go to previous error message' })
+vim.keymap.set('n', 'ää', '<cmd>cn<CR>', { desc = 'Go to next error message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
