@@ -18,11 +18,23 @@ return {
       vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
     end,
   },
-  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+  -- { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+  -- { 'rebelot/kanagawa.nvim', name = 'kanagawa' },
+  { 'rose-pine/neovim', name = 'rose-pine', priority = 1000 },
   {
     'FabijanZulj/blame.nvim',
     config = function()
       require('blame').setup()
+    end,
+  },
+  {
+    'kylechui/nvim-surround',
+    version = '*', -- Use for stability; omit to use `main` branch for the latest features
+    event = 'VeryLazy',
+    config = function()
+      require('nvim-surround').setup {
+        -- Configuration here, or leave empty to use defaults
+      }
     end,
   },
 }
